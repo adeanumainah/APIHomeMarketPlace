@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5dp"
+    app:cardCornerRadius="@dimen/_15dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5dp">
+
+        <ImageView
+            android:id="@+id/img_list_staggered"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:padding="@dimen/_5dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name_stglist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/_10dp"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingRight="@dimen/_10dp"
+                android:text="@string/lable_name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_address_stglist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:paddingStart="@dimen/_10dp"
+                android:paddingEnd="@dimen/_5dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingTop="@dimen/_5dp"
+                android:text="@string/lable_address"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_15sp" />
+
+            <RatingBar
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_5dp"
+                android:layout_marginStart="@dimen/_7dp"
+                android:numStars="5"
+                android:rating="4.5" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+

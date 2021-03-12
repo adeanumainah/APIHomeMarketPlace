@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SignInActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/belowimg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tower"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/login_account"
+        android:layout_marginTop="@dimen/_40dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_30sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_title"
+        android:layout_marginLeft="@dimen/_30dp"
+        android:layout_marginTop="@dimen/_70dp"
+        android:layout_marginRight="@dimen/_30dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/_4dp"
+        android:padding="@dimen/_20dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_30dp">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:drawablePadding="@dimen/_20dp"
+                android:drawableTint="@android:color/white"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_pass_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/btn"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="@dimen/_20dp"
+                android:drawableTint="@android:color/white"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_masuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_22dp"
+                android:background="@color/white"
+                android:text="@string/masuk"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sp" />
+
+            <TextView
+                android:id="@+id/tv_createAkunLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/not_a_member_get_registered_now"
+                android:textColor="@android:color/white"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_registeredSosmed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50dp"
+                android:gravity="center"
+                android:text="@string/login_with_your_social_media_account"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/signin_with_google"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photo"
+        android:layout_width="@dimen/_100dp"
+        android:layout_height="@dimen/_100dp"
+        android:layout_below="@+id/login_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_16dp"
+        android:background="@drawable/user_profile_image_background"
+        android:elevation="@dimen/_4dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/estate3" />
+
+</RelativeLayout>

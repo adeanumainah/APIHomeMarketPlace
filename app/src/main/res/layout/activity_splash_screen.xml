@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center"
+    tools:context=".activity.SplashScreenActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imgicon"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/judul"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/estate3"/>
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/marketplace"
+        android:fontFamily="cursive"
+        android:layout_marginTop="90dp"
+        android:textColor="@color/mustard"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imgicon"
+        android:layout_marginTop="40dp"
+        android:indeterminateTint="@color/mustard"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/belowimg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tower"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">APIHomeMarketPlace</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="searchRumah">Search for House</string>
+    <string name="terkini">Proyek Terkini </string>
+    <string name="see">Lihat Semua </string>
+    <string name="popular">Properti Terpopular </string>
+    <string name="marketplace">Royal Estate</string>
+    <string name="lable_name">Cluster Puri Anjasmoro</string>
+    <string name="lable_address">jl.A.Yani, Pemurus Dalam, Kab Bogor, Cibubur</string>
+    <string name="beli">Beli</string>
+    <string name="sewa">Sewa</string>
+    <string name="rating">Rating</string>
+    <string name="price">559.000.000</string>
+    <string name="lable_rp">Rp</string>
+    <string name="desc">Deskripsi</string>
+    <string name="baca">Baca Selengkapnya</string>
+    <string name="Informasi">Informasi Properti</string>
+    <string name="lihat">Lihat Selengkapnya</string>
+    <string name="lable_kondisi">Baru</string>
+    <string name="luas_bangunan">Luas Bangunan</string>
+    <string name="kondisi">Kondisi Properti</string>
+    <string name="lable_luas">Luas Bangunan : 92 m2 | Luas Tanah : 112 m2</string>
+    <string name="luastanah">Luas Tanah</string>
+    <string name="lable_lantai">2</string>
+    <string name="lantai">Jumlah lantai</string>
+    <string name="lable_developer">PT Griya Chaya Pratama</string>
+    <string name="developer">Pembangun</string>
+    <string name="sertifikat">Sertifikat</string>
+    <string name="lable_sertifikat">"SHM - Sertifikat Hak Milik "</string>
+    <string name="perabotan">Dilengkapi Perabotan</string>
+    <string name="lable_perabotan">Semi Furnished</string>
+    <string name="name_address">Address</string>
+    <string name="address">Address</string>
+    <string name="lable_name_desc">Deskripsi</string>
+    <string name="login_account">Login Account</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="not_a_member_get_registered_now">Not a member? Get registered now!</string>
+    <string name="login_with_your_social_media_account">Login with your social media account!</string>
+    <string name="text_error_message">Error Message</string>
+    <string name="lable_type">Rumah Dijual</string>
+    <string name="type">Type</string>
+    <string name="lable_fproperty">One gate system, TV Cable, Internet Indihome, Underground cable, Underground sewage system, Taman kecil, Tempat parkir kecil</string>
+    <string name="fproperty">Fasilitas Property</string>
+    <string name="hubungi_kami">Hubungi kami</string>
+    <string name="title_sewa">Sewa</string>
+    <string name="title_jual">Jual</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="upusername">Username :</string>
+    <string name="upemail">Email :</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="title_profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="welcome_to_the_app">Welcome to the App</string>
+    <string name="input_nomor_telepon">Input Nomor Telepon</string>
+    <string name="masuk">Masuk</string>
+    <string name="authentication_hp">Authentication HP</string>
+    <string name="submit_number">Submit Number</string>
+    <string name="phone">Phone</string>
+    <string name="upphone">Phone :</string>
+    <string name="masuk_sebagai_pembeli">Masuk sebagai pembeli</string>
+    <string name="masuk_sebagai_penjual">Masuk sebagai penjual</string>
+
+
+</resources>

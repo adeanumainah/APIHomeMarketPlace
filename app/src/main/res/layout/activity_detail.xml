@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="@dimen/_5dp"
+    android:layout_margin="@dimen/_5dp"
+    tools:context=".activity.DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_700dp"
+        android:layout_marginBottom="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/iv_backstage_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:src="@drawable/ic_rightarrow" />
+
+
+        <FrameLayout
+            android:id="@+id/fm_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_backstage_detail">
+
+            <ImageView
+                android:id="@+id/iv_image_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/house" />
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fm_detail_image"
+            android:layout_marginTop="@dimen/_16dp"
+            android:text="@string/rating"
+            android:layout_marginStart="@dimen/_5dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/rt_var_detail_popular"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fm_detail_image"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_toEndOf="@id/tv_rating"
+            android:numStars="5"
+            android:rating="3.5" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/rb_fav_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/mustard"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_above="@id/tv_lable_price"
+            android:src="@drawable/ic_baseline_favorite"
+            app:layout_anchor = "@id/fm_detail_image"/>
+
+        <TextView
+            android:id="@+id/rupiah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_rating"
+            android:layout_margin="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:paddingTop="@dimen/_5dp"
+            android:text="@string/lable_rp"
+            android:textSize="@dimen/_23dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_lable_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_rating"
+            android:layout_marginTop="@dimen/_5dp"
+            android:paddingTop="@dimen/_5dp"
+            android:text="@string/price"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_toEndOf="@id/rupiah"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lable_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rupiah"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_margin="@dimen/_5dp"
+            android:paddingTop="@dimen/_5dp"
+            android:textStyle="bold|italic"
+            android:text="@string/lable_name"
+            android:textSize="@dimen/_22sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_lable_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_lable_name"
+            android:layout_marginTop="@dimen/_5dp"
+            android:maxLines="2"
+            android:layout_margin="@dimen/_5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/lable_address"
+            android:textSize="@dimen/_15sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:padding="@dimen/_5dp"
+            android:layout_margin="@dimen/_5dp"
+            android:id="@+id/cv_description"
+            android:layout_below="@id/tv_lable_address"
+            app:cardCornerRadius="@dimen/_5dp"
+            app:cardElevation="@dimen/_10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3dp"
+                android:paddingStart="@dimen/_3dp"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expansion_headerIndicator="@+id/headerIndicator"
+                    app:expansion_layout="@+id/expansionLayout"
+                    app:expansion_toggleOnClick="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/desc"
+                        android:layout_marginStart="@dimen/_3dp"
+                        android:padding="@dimen/_5dp"
+                        android:textColor="@color/mustard"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/_18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp"
+                        app:tint="@color/mustard" />
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:id="@+id/expansionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_detail_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5dp"
+                        android:layout_marginEnd="@dimen/_5dp"
+                        android:padding="@dimen/_3dp"
+                        android:layout_marginBottom="@dimen/_5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvdahboardInfoProperti"
+                    android:layout_width="390dp"
+                    android:layout_height="390dp"
+                    android:orientation="vertical"
+                    android:elevation="8dp"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_below="@id/cv_description"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    android:background="@drawable/squareimage2"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/infoProperti"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Informasi"
+                        android:textSize="@dimen/_18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/_12dp"
+                        android:layout_marginTop="@dimen/_12dp"
+                        android:textColor="@color/mustard"
+                        android:maxLines="3"/>
+
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_marginTop="@dimen/_50dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/type"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_name"
+                        android:layout_marginStart="200dp"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/type"
+                        android:layout_marginTop="@dimen/_50dp"
+                        android:textColor="@android:color/black"
+                        android:text="@string/lable_type"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/luas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="90dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/luastanah"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_luas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_type"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/luas"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/lable_luas"
+                        android:maxLines="3"
+                        android:layout_marginStart="200dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+
+                    <TextView
+                        android:id="@+id/lantai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="130dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/lantai"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_lantai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_luas"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/lantai"
+                        android:layout_marginTop="125dp"
+                        android:text="@string/lable_lantai"
+                        android:layout_marginStart="200dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/developer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="160dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/developer"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_developer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_lantai"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/developer"
+                        android:layout_marginTop="153dp"
+                        android:text="@string/lable_developer"
+                        android:layout_marginStart="200dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/sertifikat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="190dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/sertifikat"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_sertifikat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_developer"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/luas"
+                        android:layout_marginTop="185dp"
+                        android:text="@string/lable_sertifikat"
+                        android:layout_marginStart="200dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/furnished"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/perabotan"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_furnished"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_sertifikat"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/luas"
+                        android:layout_marginTop="215dp"
+                        android:text="@string/lable_perabotan"
+                        android:layout_marginStart="200dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/fproperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_250dp"
+                        android:paddingLeft="@dimen/_15dp"
+                        android:text="@string/fproperty"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_lable_fproperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_lable_furnished"
+                        android:paddingTop="@dimen/_5dp"
+                        android:layout_toEndOf="@id/luas"
+                        android:layout_marginTop="245dp"
+                        android:text="@string/lable_fproperty"
+                        android:layout_marginStart="200dp"
+                        android:maxLines="6"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_15sp" />
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtlihat"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentStart="true"-->
+<!--                        android:layout_marginTop="130dp"-->
+<!--                        android:layout_marginRight="@dimen/_15dp"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:text="@string/lihat"-->
+<!--                        android:paddingLeft="@dimen/_15dp"-->
+<!--                        android:textColor="@color/mustard"-->
+<!--                        android:textSize="@dimen/_15dp"-->
+<!--                        android:textStyle="bold" />-->
+
+                </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_call_us"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_btn"
+            android:layout_marginTop="@dimen/_30dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:layout_below="@id/cvdahboardInfoProperti"
+            android:textSize="@dimen/_12sp"
+            android:textColor="@android:color/white"
+            android:text="@string/hubungi_kami"
+            android:onClick="panggil"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>
+
