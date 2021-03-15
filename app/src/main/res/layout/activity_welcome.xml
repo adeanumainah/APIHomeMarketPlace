@@ -28,6 +28,7 @@
         android:textSize="@dimen/_26sp"
         android:textStyle="bold" />
 
+
     <RelativeLayout
         android:id="@+id/rl_login"
         android:layout_width="fill_parent"

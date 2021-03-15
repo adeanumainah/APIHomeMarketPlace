@@ -66,6 +66,8 @@
     <string name="upphone">Phone :</string>
     <string name="masuk_sebagai_pembeli">Masuk sebagai pembeli</string>
     <string name="masuk_sebagai_penjual">Masuk sebagai penjual</string>
+    <string name="upload">uploading…</string>
+    <string name="wait_for_upload">Image is uploading, please wait…</string>
 
 
 </resources>

@@ -1,6 +1,8 @@
 package com.dean.apihomemarketplace.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dean.apihomemarketplace.R
+import com.dean.apihomemarketplace.activity.DetailActivity
 import com.dean.apihomemarketplace.model.DataItem
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.item_staggered_list.view.*
 import kotlinx.android.synthetic.main.item_staggered_row.view.*
 import kotlinx.android.synthetic.main.row_listh.view.*
@@ -16,7 +20,38 @@ import kotlinx.android.synthetic.main.row_listh.view.*
 class StaggeredPopularAdapter(var context: Context)
     : RecyclerView.Adapter<StaggeredPopularAdapter.ViewHolder>() {
 
-    private val listStaggered = ArrayList<DataItem>()
+    private var listRumah: List<DataItem> = ArrayList()
+
+    fun setData(items: List<DataItem>) {
+        listRumah = items
+        //buat ngereload/syncronize data
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+        fun bind(data: DataItem){
+            with(itemView){
+                Glide.with(itemView)
+                    .load(data.image)
+                    //di requestoption bisa ngatur opacity nya jg
+                    .apply(RequestOptions().override(400))
+                    .into(img_list_staggered)
+
+                tv_name_stglist.text = data.name
+                tv_address_stglist.text = data.address
+//
+                itemView.setOnClickListener {
+                    Log.d("Cek DataDi adapter", Gson().toJson(data))
+
+                    val page = Intent(context, DetailActivity::class.java)
+                    page.putExtra(DetailActivity.KEY_POPULAR_HOME, Gson().toJson(data))
+                    context.startActivity(page)
+                }
+
+            }
+        }
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -27,28 +62,9 @@ class StaggeredPopularAdapter(var context: Context)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listStaggered.get(position))
+        holder.bind(listRumah.get(position))
     }
 
-    override fun getItemCount(): Int = listStaggered.size
+    override fun getItemCount(): Int = listRumah.size
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        fun bind(home: DataItem){
-            with(itemView){
-                Glide.with(itemView)
-                        .load(home.image)
-                        //di requestoption bisa ngatur opacity nya jg
-                        .apply(RequestOptions().override(400))
-                        .into(img_list_staggered)
-
-                tv_name_stglist.text = home.name
-                tv_address_stglist.text = home.address
-//
-
-                itemView.setOnClickListener { (home) }
-
-            }
-        }
-
-    }
 }

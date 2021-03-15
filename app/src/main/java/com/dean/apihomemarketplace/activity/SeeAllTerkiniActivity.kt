@@ -15,7 +15,9 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.adapter.ProyekTerkiniAdapter
+import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
 import com.dean.apihomemarketplace.fragment.HomeFragment
+import com.dean.apihomemarketplace.model.DataItem
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
 //import com.dean.homemarketplace.model.ResponseItem
@@ -29,7 +31,7 @@ import retrofit2.Response
 
 class SeeAllTerkiniActivity : AppCompatActivity() {
 
-    private lateinit var terkiniAdapter: ProyekTerkiniAdapter
+    private lateinit var staggeredTerkiniAdapter: StaggeredTerkiniAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,18 +41,21 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
         showRecyclerGrid()
         getBack()
         getRecyclerList()
+//        getDetail()
 
     }
 
-        private fun getRecyclerList() {
+
+
+    private fun getRecyclerList() {
             //mengikat si recyclernya ke dalam list
             val layoutManagerStaggered = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
             rv_all_terkini.layoutManager = layoutManagerStaggered
 
             //ngeset data diadapter dan diset adapternya disini
-            terkiniAdapter = ProyekTerkiniAdapter(this)
+            staggeredTerkiniAdapter = StaggeredTerkiniAdapter(this)
 
-            rv_all_terkini.adapter = terkiniAdapter
+            rv_all_terkini.adapter = staggeredTerkiniAdapter
 
         }
 
@@ -60,6 +65,8 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 
     private fun showRecyclerGrid() {
         var loading = ProgressDialog.show(this, "Request Data", "Loading..")
@@ -80,7 +87,9 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
                                 if(!data.data.isNullOrEmpty()){
                                     Log.d("DATA", "ADA")
                                     Log.d("DATA", Gson().toJson(data.data))
-                                    terkiniAdapter.setData(data.data!!)
+                                    staggeredTerkiniAdapter.setData(data.data!!)
+
+
                                 }
 
                             }
@@ -92,10 +101,15 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
                         loading.dismiss()
                     }
                 }
-
-
         )
+
     }
+
+//    private fun getDetail() {
+//        val page = Intent(this, DetailActivity::class.java)
+//        page.putExtra(DetailActivity.KEY_POPULAR_HOME, Gson().toJson(home))
+//        this.startActivity(page)
+//    }
 
 
 

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_8dp"
-    app:cardCornerRadius="@dimen/_16dp">
+    android:layout_margin="@dimen/_5dp"
+    android:orientation="vertical"
+    app:cardElevation="@dimen/_5dp"
+    app:cardCornerRadius="@dimen/_10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,96 +16,24 @@
 
         <FrameLayout
             android:id="@+id/fm_staggered"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <FrameLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:foreground="@drawable/top_background">
+                android:foreground="@drawable/bg_black">
 
                 <ImageView
                     android:id="@+id/iv_staggered_rumah"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_250dp"
                     android:layout_gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/house"/>
+                    android:src="@drawable/house" />
             </FrameLayout>
 
-            <TextView
-                android:id="@+id/tv_staggered_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="@dimen/_4dp"
-                android:layout_marginEnd="@dimen/_4dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:text="@string/lable_name"
-                android:padding="@dimen/_5dp"
-                android:textSize="18sp" />
         </FrameLayout>
-
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_staggered_address1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/name_address"-->
-<!--            android:layout_marginStart="@dimen/_13dp"-->
-<!--            android:layout_below="@id/fm_staggered"-->
-<!--            android:layout_marginTop="@dimen/_10dp"-->
-<!--            android:textColor="@android:color/black"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="18sp" />-->
-
-
-        <TextView
-            android:id="@+id/tv_staggered_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            android:padding="@dimen/_5dp"
-            android:layout_below="@id/fm_staggered"
-            android:layout_marginStart="@dimen/_13dp"
-            android:textSize="16sp" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_staggered_desc_food"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/lable_name_desc"-->
-<!--            android:layout_marginStart="@dimen/_13dp"-->
-<!--            android:layout_marginTop="@dimen/_10dp"-->
-<!--            android:maxLines="2"-->
-<!--            android:textColor="@android:color/black"-->
-<!--            android:layout_below="@id/tv_staggered_address2_food"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="18sp" />-->
-
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_staggered_desc2_food"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/lable_name_desc"-->
-<!--            android:layout_marginStart="@dimen/_13dp"-->
-<!--            android:layout_below="@id/tv_staggered_address2_food"-->
-<!--            android:maxLines="2"-->
-<!--            android:ellipsize="end"-->
-<!--            android:textSize="16sp" />-->
-
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:rating="3.5"
-            android:numStars="5"
-            android:layout_marginStart="@dimen/_13dp"
-            android:layout_marginBottom="@dimen/_5dp"
-            android:layout_marginTop="@dimen/_10dp"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_below="@id/tv_staggered_address"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
@@ -111,14 +41,181 @@
             android:layout_above="@id/tv_staggered_address"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/_16dp"
-            app:backgroundTint="@color/mustard"
-            android:layout_marginBottom="@dimen/_16dp"
+            android:backgroundTint="@color/mustard"
             app:fabSize="mini"
             app:layout_anchor="@id/fm_staggered"
-            app:srcCompat="@drawable/ic_baseline_favorite"/>
+            app:srcCompat="@drawable/ic_baseline_favorite" />
+
+        <TextView
+            android:id="@+id/tv_staggered_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_below="@id/fm_staggered"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:text="@string/lable_name"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_staggered_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_staggered_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginEnd="10dp"
+            android:maxLines="2"
+            android:text="@string/lable_address"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="3.5"
+                    android:numStars="5"
+                    android:layout_marginStart="@dimen/_13dp"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_below="@id/tv_staggered_address"/>
+
 
     </RelativeLayout>
 
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
 
-</androidx.cardview.widget.CardView>
+
+
+
+<!--<androidx.cardview.widget.CardView -->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="@dimen/_8dp"-->
+<!--    app:cardCornerRadius="@dimen/_16dp">-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/fm_staggered"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:foreground="@drawable/top_background">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_staggered_rumah"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@drawable/house"/>-->
+<!--            </FrameLayout>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_staggered_name"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="bottom"-->
+<!--                android:layout_marginStart="@dimen/_4dp"-->
+<!--                android:layout_marginEnd="@dimen/_4dp"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="@string/lable_name"-->
+<!--                android:padding="@dimen/_5dp"-->
+<!--                android:textSize="18sp" />-->
+<!--        </FrameLayout>-->
+
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/tv_staggered_address1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/name_address"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginStart="@dimen/_13dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@id/fm_staggered"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="@dimen/_10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@android:color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="18sp" />&ndash;&gt;-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_staggered_address"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/address"-->
+<!--            android:padding="@dimen/_5dp"-->
+<!--            android:layout_below="@id/fm_staggered"-->
+<!--            android:layout_marginStart="@dimen/_13dp"-->
+<!--            android:textSize="16sp" />-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/tv_staggered_desc_food"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/lable_name_desc"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginStart="@dimen/_13dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="@dimen/_10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:maxLines="2"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@android:color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@id/tv_staggered_address2_food"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="18sp" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/tv_staggered_desc2_food"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/lable_name_desc"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginStart="@dimen/_13dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_below="@id/tv_staggered_address2_food"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:maxLines="2"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:ellipsize="end"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="16sp" />&ndash;&gt;-->
+
+<!--        <RatingBar-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:rating="3.5"-->
+<!--            android:numStars="5"-->
+<!--            android:layout_marginStart="@dimen/_13dp"-->
+<!--            android:layout_marginBottom="@dimen/_5dp"-->
+<!--            android:layout_marginTop="@dimen/_10dp"-->
+<!--            style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--            android:layout_below="@id/tv_staggered_address"/>-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_above="@id/tv_staggered_address"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="@dimen/_16dp"-->
+<!--            app:backgroundTint="@color/mustard"-->
+<!--            android:layout_marginBottom="@dimen/_16dp"-->
+<!--            app:fabSize="mini"-->
+<!--            app:layout_anchor="@id/fm_staggered"-->
+<!--            app:srcCompat="@drawable/ic_baseline_favorite"/>-->
+
+<!--    </RelativeLayout>-->
+
+
+
+<!--</androidx.cardview.widget.CardView>-->

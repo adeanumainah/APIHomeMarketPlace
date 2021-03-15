@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.adapter.PropertyPopularAdapter
+import com.dean.apihomemarketplace.adapter.StaggeredPopularAdapter
+import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
 import com.dean.apihomemarketplace.fragment.HomeFragment
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
@@ -28,8 +30,8 @@ import retrofit2.Response
 
 class SeeAllPopularActivity : AppCompatActivity() {
 
-    private lateinit var popularAdapter: PropertyPopularAdapter
-    val context : Context? = null
+    private lateinit var staggeredPopularAdapter: StaggeredPopularAdapter
+//    val context : Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,24 +41,24 @@ class SeeAllPopularActivity : AppCompatActivity() {
 //        showRecyclerGrid()
 //        getHome()
 
-        getRecyclerList()
+//        getRecyclerList()
         GetDatas()
         getBack()
 
-//        popularAdapter = this.let { PropertyPopularAdapter(it) }!!
-//        rv_all_popular.apply {
-//            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-//            adapter = popularAdapter
-//        }
+        staggeredPopularAdapter = this.let { StaggeredPopularAdapter(it) }!!
+        rv_all_popular.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = staggeredPopularAdapter
+        }
 
     }
 
-    private fun getRecyclerList() {
-        popularAdapter = findViewById(R.id.rv_all_popular)
-        popularAdapter = context?.let { PropertyPopularAdapter(it) }!!
-        val linearLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_all_popular.setLayoutManager(linearLayoutManager)
-    }
+//    private fun getRecyclerList() {
+//        popularAdapter = findViewById(R.id.rv_all_popular)
+//        popularAdapter = context?.let { PropertyPopularAdapter(it) }!!
+//        val linearLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//        rv_all_popular.setLayoutManager(linearLayoutManager)
+//    }
 
 
     private fun getBack() {
@@ -90,7 +92,7 @@ class SeeAllPopularActivity : AppCompatActivity() {
                             if (!data.data.isNullOrEmpty()) {
                                 Log.d("DATA", "ADA")
                                 Log.d("DATA", Gson().toJson(data.data))
-                                popularAdapter.setData(data.data!!)
+                                staggeredPopularAdapter.setData(data.data!!)
                             }
 
                         }

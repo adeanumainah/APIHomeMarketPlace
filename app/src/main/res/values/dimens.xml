@@ -58,5 +58,6 @@
     <dimen name="_700dp">700dp</dimen>
     <dimen name="_55dp">55dp</dimen>
     <dimen name="_22sp">22sp</dimen>
+    <dimen name="_390dp">390dp</dimen>
 
 </resources>

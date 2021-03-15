@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_5dp"
+    android:layout_margin="@dimen/_3dp"
     app:cardCornerRadius="@dimen/_15dp">
 
 
@@ -15,12 +15,20 @@
         android:orientation="horizontal"
         android:padding="@dimen/_5dp">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:padding="@dimen/_5dp"
+            android:layout_margin="@dimen/_3dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_10dp">
         <ImageView
             android:id="@+id/img_list_staggered"
             android:layout_width="@dimen/_100dp"
             android:layout_height="@dimen/_100dp"
-            android:padding="@dimen/_5dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:foreground="@drawable/bg_black"
+            android:src="@drawable/house" />
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +69,7 @@
                 android:paddingStart="@dimen/_5dp"
                 android:layout_marginStart="@dimen/_7dp"
                 android:numStars="5"
-                android:rating="4.5" />
+                android:rating="3.5" />
         </LinearLayout>
 
 

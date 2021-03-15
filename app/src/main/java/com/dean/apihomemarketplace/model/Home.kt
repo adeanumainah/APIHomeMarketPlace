@@ -21,6 +21,7 @@ data class Home (
 
 ) : Parcelable
 
+
 //var id: String,
 //var name : String,
 //var address: String,
