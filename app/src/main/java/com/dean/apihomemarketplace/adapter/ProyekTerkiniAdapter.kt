@@ -6,14 +6,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.activity.DetailActivity
 import com.dean.apihomemarketplace.model.DataItem
 import com.google.gson.Gson
-//import com.dean.homemarketplace.model.ResponseItem
+import kotlinx.android.synthetic.main.item_staggered_list.view.*
 import kotlinx.android.synthetic.main.row_listh.view.*
+
 
 class ProyekTerkiniAdapter(var context: Context)
     : RecyclerView.Adapter<ProyekTerkiniAdapter.ViewHolder>(){
@@ -31,7 +33,21 @@ class ProyekTerkiniAdapter(var context: Context)
             with(itemView) {
                 tv_name_rumah.text = data.name
                 tv_address_rumah.text = data.address
-                Glide.with(context).load(data.image).centerCrop().into(iv_rumah)
+
+                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+data?.image
+
+//            val url:String = "http://192.168.80.139/apihouse/public/image/"
+
+                Log.d("Cek DataDi Detail",urlImg)
+//            Glide.with(this).load(urlImg).into(iv_image_detail)
+                Glide.with(itemView)
+                        .load(urlImg)
+                        .placeholder(R.drawable.houseicon)
+                        .centerCrop()
+                        .into(iv_row_rumah)
+
+//                Glide.with(context).load("http://192.168.80.139/apihouse/public/image/").centerCrop().into(iv_row_rumah)
+
                 itemView.setOnClickListener {
                     Log.d("Cek DataDi adapter", Gson().toJson(data))
 

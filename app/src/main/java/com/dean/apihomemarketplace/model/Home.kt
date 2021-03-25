@@ -12,12 +12,13 @@ data class Home (
         var desc : String,
         var type : String,
         var developer : String,
-        var property_facilties : String,
+        var property_facilities : String,
         var certificate : String,
         var furnished : String,
         var number_of_floors : String,
         var surface_area : String,
-        var image : String
+        var image : String,
+//        var img_local : Int
 
 ) : Parcelable
 

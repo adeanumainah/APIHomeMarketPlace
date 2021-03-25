@@ -59,5 +59,10 @@
     <dimen name="_55dp">55dp</dimen>
     <dimen name="_22sp">22sp</dimen>
     <dimen name="_390dp">390dp</dimen>
+    <dimen name="_380dp">380dp</dimen>
+    <dimen name="_385dp">385dp</dimen>
+    <dimen name="_18dp">18dp</dimen>
+    <dimen name="_85dp">85dp</dimen>
+    <dimen name="_140dp">140dp</dimen>
 
 </resources>

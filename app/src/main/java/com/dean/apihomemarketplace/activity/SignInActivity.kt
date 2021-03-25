@@ -141,6 +141,8 @@ class SignInActivity : AppCompatActivity() {
         })
     }
 
+
+
     //menambahkan data user ke realtime database
     //verifikasi data
     private fun insertUser(
@@ -170,3 +172,4 @@ class SignInActivity : AppCompatActivity() {
         return true
     }
 }
+

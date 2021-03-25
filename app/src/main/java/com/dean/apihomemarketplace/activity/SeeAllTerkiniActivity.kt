@@ -1,30 +1,26 @@
 package com.dean.apihomemarketplace.activity
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.androidnetworking.AndroidNetworking
-import com.androidnetworking.common.Priority
-import com.androidnetworking.error.ANError
-import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.dean.apihomemarketplace.R
-import com.dean.apihomemarketplace.adapter.ProyekTerkiniAdapter
 import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
-import com.dean.apihomemarketplace.fragment.HomeFragment
-import com.dean.apihomemarketplace.model.DataItem
+import com.dean.apihomemarketplace.listActivity.JakartaActivity
+import com.dean.apihomemarketplace.listActivity.TanggerangActivity
+import com.dean.apihomemarketplace.listAdapter.JakartaAdapter
+import com.dean.apihomemarketplace.model.Jakarta
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
 //import com.dean.homemarketplace.model.ResponseItem
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_see_all_terkini.*
-import org.json.JSONArray
-import org.json.JSONException
+import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,6 +33,16 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_all_terkini)
         supportActionBar?.hide()
+
+        tv_category_jakarta.setOnClickListener {
+            val intent = Intent(this, JakartaActivity::class.java)
+            startActivity(intent)
+        }
+
+        tv_category_turkish_tanggerang.setOnClickListener {
+            val intent = Intent(this, TanggerangActivity::class.java)
+            startActivity(intent)
+        }
 
         showRecyclerGrid()
         getBack()
@@ -61,8 +67,7 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
 
     private fun getBack() {
         iv_backstage_terkini.setOnClickListener {
-            val intent = Intent (this, HomeFragment::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
     }
 
@@ -104,6 +109,7 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
         )
 
     }
+
 
 //    private fun getDetail() {
 //        val page = Intent(this, DetailActivity::class.java)

@@ -1,24 +1,25 @@
 package com.dean.apihomemarketplace.fragment
 
+import android.app.PendingIntent.getActivity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
+import android.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.activity.DetailActivity
+import com.dean.apihomemarketplace.activity.SearchActivity
 import com.dean.apihomemarketplace.activity.SeeAllPopularActivity
 import com.dean.apihomemarketplace.activity.SeeAllTerkiniActivity
 import com.dean.apihomemarketplace.adapter.PropertyPopularAdapter
 import com.dean.apihomemarketplace.adapter.ProyekTerkiniAdapter
-import com.dean.apihomemarketplace.model.DataItem
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
 import com.google.gson.Gson
@@ -30,15 +31,19 @@ import kotlinx.android.synthetic.main.row_listh.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.NullPointerException
+import java.util.*
+
 
 class HomeFragment : Fragment() {
 
     private lateinit var terkiniAdapter: ProyekTerkiniAdapter
-    private lateinit var rv_terkini: RecyclerView
-
+    private lateinit var rvTerkini: RecyclerView
     private lateinit var popularAdapter: PropertyPopularAdapter
     private lateinit var rv_popular: RecyclerView
+
+//    val displayList = ArrayList<DataItem>()
+//    private lateinit var itemList: ArrayList<DataItem>
+    private lateinit var searchView: SearchView
 
     companion object {
         fun defaultFragment(): HomeFragment {
@@ -54,14 +59,20 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
-            savedInstanceState: Bundle?
+            savedInstanceState: Bundle?,
     ): View? {
         var v: View = inflater.inflate(R.layout.fragment_home, container, false)
 
-        rv_terkini = v.findViewById(R.id.rv_terkini)
+        rvTerkini = v.findViewById(R.id.rv_terkini)
         rv_popular = v.findViewById(R.id.rv_popular)
+//        searchView = v.findViewById(R.id.searchView)
+//        searchView.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
 
+
+//        displayList.addAll(ArrayList<DataItem>())
         return v
+
+
     }
 
     val imageContentSlider = intArrayOf(
@@ -86,7 +97,7 @@ class HomeFragment : Fragment() {
         //set yang sudah ditempel
         carouselView.setImageListener(imageContentList)
         //membaca maximum index yang dibaca
-        carouselView.setPageCount(imageContentSlider.count())
+        carouselView.pageCount = imageContentSlider.count()
 
         GetDatas()
 
@@ -101,7 +112,7 @@ class HomeFragment : Fragment() {
         }
 
         terkiniAdapter = context?.let { ProyekTerkiniAdapter(it) }!!
-        rv_terkini.apply {
+        rvTerkini.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = terkiniAdapter
         }
@@ -112,16 +123,92 @@ class HomeFragment : Fragment() {
             adapter = popularAdapter
         }
 
-//        val data: DataItem? = null
-//        val imgUrl = "http://192.168.0.109/apihouse/public/image/"+data?.image
+
+
+        //tapi kalo yang ini itu pake searchview yang serach view juga
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String) : Boolean {
+//                if (displayList.contains(query)) {
+//                    rvTerkini.filter(query)
+//                } else {
+//                    Toast.makeText(context, "No Match found", Toast.LENGTH_LONG).show()
+//                }
+//                return false
+//            }
 //
-//        Glide.with(this)
-//            .load(imgUrl)
-//            .placeholder(R.drawable.houseicon)
-//            .centerCrop()
-//            .into(iv_rumah)
+//            override fun onQueryTextChange(newText: String) : Boolean{
+//                terkiniAdapter!!.filter(newText)
+//                return false
+//            }
+//        })
+
+
+
 
     }
+
+
+
+
+
+    //ini pasangan yg pake searchview
+//    private fun filterList(filterItem: String) {
+//        var tempList: ArrayList<DataItem> = ArrayList()
+//
+//        for (d in itemList){
+//
+//            if (filterItem in d.name.toString()){
+//
+//                tempList.add(d)
+//            }
+//        }
+//        terkiniAdapter!!.setData(tempList)
+//    }
+
+//    ========================================================================================
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//
+//        val menuItem = menu.findItem(R.id.searchView)
+//        if (menuItem !=  null){
+//
+//            val searchView = menuItem.actionView as SearchView
+//            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+//                override fun onQueryTextSubmit(query: String?): Boolean {
+//                    return true
+//                }
+//
+//                override fun onQueryTextChange(newText: String?): Boolean {
+//
+//                    if (newText!!.isNotEmpty()){
+//                        displayList.clear()
+//                        val search = newText.toLowerCase(Locale.getDefault())
+//                        ArrayList<DataItem>().forEach {
+//
+//                            if (it.name!!.toLowerCase(Locale.getDefault()).contains(search)){
+//                                displayList.add(it)
+//                            }
+//                        }
+//                        rvTerkini.adapter!!.notifyDataSetChanged()
+//
+//                    } else {
+//                        displayList.clear()
+//                        displayList.addAll(ArrayList<DataItem>())
+//                        rvTerkini.adapter!!.notifyDataSetChanged()
+//                    }
+//                    return true
+//                }
+//
+//            })
+//
+//        }
+//
+//        super.onCreateOptionsMenu(menu, inflater)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun GetDatas() {
 
@@ -133,16 +220,16 @@ class HomeFragment : Fragment() {
                         Log.d("Response", "Success" + response.body()?.data)
 
 
+
                         loading.dismiss()
                         Log.d("DATA", "hide loading")
                         if (response.isSuccessful) {
                             val data = response.body()
 
-
                             Log.d("DATA", "success")
-                            if(data?.status == 200) {
+                            if (data?.status == 200) {
                                 Log.d("DATA", "200")
-                                if(!data.data.isNullOrEmpty()){
+                                if (!data.data.isNullOrEmpty()) {
                                     Log.d("DATA", "ADA")
                                     Log.d("DATA", Gson().toJson(data.data))
                                     terkiniAdapter.setData(data.data!!)
@@ -157,6 +244,8 @@ class HomeFragment : Fragment() {
                         Log.d("Response", "Failed : " + t.localizedMessage)
                         loading.dismiss()
                     }
+
+
                 }
 
 
@@ -168,4 +257,8 @@ class HomeFragment : Fragment() {
         page.putExtra(DetailActivity.KEY_POPULAR_HOME)
         startActivity(page)
     }
+
+
 }
+
+

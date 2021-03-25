@@ -68,23 +68,25 @@ class ProfileFragment : Fragment() {
 
         })
 
-//        img_profile.setOnClickListener {
-//            openGalleryForImage()
-//        }
+        img_profile.setOnClickListener {
+            openGalleryForImage()
+        }
     }
 
-//    private fun openGalleryForImage() {
-//        val intent = Intent(Intent.ACTION_PICK)
-//        intent.type = "image/*"
-//        startActivityForResult(intent, REQUEST_CODE)
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
-//            img_profile.setImageURI(data?.data) // handle chosen image
-//        }
-//    }
+    private fun openGalleryForImage() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
+            img_profile.setImageURI(data?.data) // handle chosen image
+        }
+    }
+
+
 
 
     private fun showProfile(data: Users?) {
@@ -97,5 +99,6 @@ class ProfileFragment : Fragment() {
             startActivity<SignInActivity>()
         }
     }
+
 }
 

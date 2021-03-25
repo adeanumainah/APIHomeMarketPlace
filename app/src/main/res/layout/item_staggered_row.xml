@@ -35,16 +35,16 @@
 
         </FrameLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/tv_staggered_address"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/_16dp"
-            android:backgroundTint="@color/mustard"
-            app:fabSize="mini"
-            app:layout_anchor="@id/fm_staggered"
-            app:srcCompat="@drawable/ic_baseline_favorite" />
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_above="@id/tv_staggered_address"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="@dimen/_16dp"-->
+<!--            android:backgroundTint="@color/mustard"-->
+<!--            app:fabSize="mini"-->
+<!--            app:layout_anchor="@id/fm_staggered"-->
+<!--            app:srcCompat="@drawable/ic_baseline_favorite" />-->
 
         <TextView
             android:id="@+id/tv_staggered_name"

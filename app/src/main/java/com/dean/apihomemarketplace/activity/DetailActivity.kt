@@ -38,36 +38,43 @@ class DetailActivity : AppCompatActivity() {
         val data = intent.getStringExtra("key_popular_home").toString()
 
         var detail:DataItem = Gson().fromJson(data,DataItem::class.java)
-//        try {
-//            val urlImg:String = "http://192.168.0.109/image/"+detail?.image
-//
-//            Log.d("Cek DataDi Detail",urlImg)
+        try {
+            val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+detail.image
+
+            Log.d("Cek DataDi Detail",urlImg)
 //            Glide.with(this).load(urlImg).into(iv_image_detail)
-//        }catch (e:NullPointerException){
-//            e.printStackTrace()
-//        }
+            Glide.with(this)
+                .load(urlImg)
+                .placeholder(R.drawable.houseicon)
+                .centerCrop()
+                .into(iv_image_detail)
+        }catch (e:NullPointerException){
+            e.printStackTrace()
+            Log.d("Cek DataDi Detail","null")
+        }
 
-        val imgUrl = "http://192.168.0.109/apihouse/public/image/"+detail?.image
-
-        Glide.with(this)
-            .load(imgUrl)
-            .placeholder(R.drawable.houseicon)
-            .centerCrop()
-            .into(iv_image_detail)
+//        val imgUrl = "http://192.168.88.236/apihouse/public/image/"+detail?.image
+//        Log.d("Cek DataDi Detail",imgUrl)
+//
+//        Glide.with(this)
+//            .load(imgUrl)
+//            .placeholder(R.drawable.houseicon)
+//            .centerCrop()
+//            .into(iv_image_detail)
 
 
 //            home = intent.getParcelableExtra(KEY_POPULAR_HOME)
-        tv_lable_name.text = detail?.name.toString()
-        tv_lable_address.text = detail?.address.toString()
-        tv_lable_price.text = detail?.price.toString()
-        tv_detail_desc.text = detail?.desc.toString()
-        tv_lable_type.text = detail?.type.toString()
-        tv_lable_developer.text = detail?.developer.toString()
-        tv_lable_fproperty.text = detail?.propertyFacilities.toString()
-        tv_lable_sertifikat.text = detail?.certificate.toString()
-        tv_lable_furnished.text = detail?.furnished.toString()
-        tv_lable_lantai.text = detail?.numberOfFloors.toString()
-        tv_lable_luas.text = detail?.surfaceArea.toString()
+        tv_lable_name.text = detail.name.toString()
+        tv_lable_address.text = detail.address.toString()
+        tv_lable_price.text = detail.price.toString()
+        tv_detail_desc.text = detail.desc.toString()
+        tv_lable_type.text = detail.type.toString()
+        tv_lable_developer.text = detail.developer.toString()
+        tv_lable_fproperty.text = detail.propertyFacilities.toString()
+        tv_lable_sertifikat.text = detail.certificate.toString()
+        tv_lable_furnished.text = detail.furnished.toString()
+        tv_lable_lantai.text = detail.numberOfFloors.toString()
+        tv_lable_luas.text = detail.surfaceArea.toString()
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 //            tv_detail_desc.setText(
@@ -99,8 +106,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun getBack() {
         iv_backstage_detail.setOnClickListener {
-            val page = Intent (this, HomeFragment::class.java)
-            startActivity(page)
+            onBackPressed()
         }
 
 //        iv_backstage_detail.setOnClickListener {
@@ -110,6 +116,8 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
+
+
     fun panggil(view: View) {
         val nomor = "09667347"
         val panggil = Intent(Intent.ACTION_DIAL)
@@ -118,7 +126,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
 
+
 }
+
+
 
 
 //        btn_call_us.setOnClickListener {

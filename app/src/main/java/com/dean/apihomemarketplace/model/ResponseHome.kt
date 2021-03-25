@@ -3,17 +3,34 @@ package com.dean.apihomemarketplace.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class ResponseHome (
+class ResponseHome{
         @SerializedName("status")
         @Expose
-        var status: Int? = null,
+        var status: Int? = null
 
         @SerializedName("data")
         @Expose
         var data: List<DataItem>? = null
-)
 
-data class DataItem (
+        constructor(
+                status: Int?,
+                data: List<DataItem>?,
+        ) {
+                this.status = status
+                this.data = data
+        }
+
+        fun setResults(results: List<DataItem?>) {
+                data = data
+        }
+
+        fun getResults(): List<DataItem?>? {
+                return data
+        }
+}
+
+
+data class DataItem(
         @SerializedName("id")
         @Expose
         var id: Int? = null,
@@ -76,6 +93,12 @@ data class DataItem (
 
         @SerializedName("deleted_at")
         @Expose
-        var deletedAt: String? = null
+        var deletedAt: String? = null,
+
+
+
+
+
+
 )
 

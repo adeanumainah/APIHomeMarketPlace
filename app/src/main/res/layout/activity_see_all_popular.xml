@@ -14,11 +14,11 @@
 
         <ImageView
             android:id="@+id/iv_backstage_popular"
-            android:layout_width="@dimen/_35dp"
-            android:layout_height="@dimen/_40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_8dp"
             android:layout_marginEnd="@dimen/_16dp"
             android:src="@drawable/ic_rightarrow" />
 
@@ -26,31 +26,32 @@
             android:id="@+id/tv_title_popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20dp"
-            android:layout_marginStart="@dimen/_30dp"
+            android:layout_marginTop="@dimen/_18dp"
+            android:layout_marginStart="@dimen/_70dp"
             android:padding="@dimen/_5dp"
             android:text="@string/popular"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/_20sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/iv_favorite_popular"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="@dimen/_45dp"
-            android:layout_marginStart="@dimen/_45dp"
-            android:layout_marginTop="@dimen/_24dp"
-            android:padding="@dimen/_5dp"
-            android:src="@drawable/ic_favorite_24" />
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_favorite_popular"-->
+<!--            android:layout_width="@dimen/_40dp"-->
+<!--            android:layout_height="@dimen/_45dp"-->
+<!--            android:layout_marginStart="@dimen/_45dp"-->
+<!--            android:layout_marginTop="@dimen/_24dp"-->
+<!--            android:padding="@dimen/_5dp"-->
+<!--            android:src="@drawable/ic_favorite_24" />-->
 
     </LinearLayout>
+
 
     <HorizontalScrollView
         android:id="@+id/hs_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll1"
-        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginTop="19dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -60,89 +61,89 @@
             android:padding="@dimen/_5dp">
 
             <TextView
-                android:id="@+id/tv_category_jakarta"
+                android:id="@+id/tv_jakarta_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Jakarta"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_bandung"
+                android:id="@+id/tv_bandung_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bandung"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_bekasi"
+                android:id="@+id/tv_bekasi_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bekasi"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_surabaya"
+                android:id="@+id/tv_surabaya_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Surabaya"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_bogor"
+                android:id="@+id/tv_bogor_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bogor"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_turkish_tanggerang"
+                android:id="@+id/tv_tanggerang_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Tanggerang"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_grilled_magelang"
+                android:id="@+id/tv_magelang_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Magelang"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
 
             <TextView
-                android:id="@+id/tv_category_jayapura"
+                android:id="@+id/tv_jayapura_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Jayapura"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -151,13 +152,30 @@
 
     </HorizontalScrollView>
 
+    <EditText
+        android:id="@+id/searchView"
+        android:layout_width="@dimen/_385dp"
+        android:layout_marginStart="@dimen/_12dp"
+        android:layout_height="@dimen/_45dp"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/ll1"
+        android:hint="Search here..."
+        android:layout_marginTop="@dimen/_140dp"
+        android:background="@drawable/bg_white"
+        android:drawablePadding="@dimen/_15dp"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here"
+        tools:ignore="MissingConstraints,NotSibling" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_all_popular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/hs_category"
+        android:layout_below="@id/searchView"
         android:layout_margin="@dimen/_8dp"
         android:layout_marginTop="@dimen/_20dp"
+        tools:listitem="@layout/item_staggered_list"
         android:padding="@dimen/_8dp" />
 
 

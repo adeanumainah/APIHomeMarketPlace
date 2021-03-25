@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/_200dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="@dimen/_16dp"
     android:layout_marginBottom="@dimen/_16dp"
@@ -31,7 +31,7 @@
             android:foreground="@drawable/shape_gradient">
 
             <ImageView
-                android:id="@+id/iv_rumah"
+                android:id="@+id/iv_row_rumah"
                 android:layout_width="@dimen/_200dp"
                 android:layout_height="@dimen/_150dp"
                 android:scaleType="fitXY"
@@ -41,19 +41,19 @@
 
         <TextView
             android:id="@+id/tv_name_rumah"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_200dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16dp"
             android:layout_marginStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_16dp"
-            android:maxLines="2"
+            android:maxLines="1"
             android:text="@string/lable_name"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_address_rumah"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16dp"
             android:layout_marginEnd="@dimen/_16dp"

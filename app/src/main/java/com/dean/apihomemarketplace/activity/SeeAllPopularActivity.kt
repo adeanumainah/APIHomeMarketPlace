@@ -7,7 +7,12 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.InputType
+import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,27 +21,48 @@ import com.dean.apihomemarketplace.adapter.PropertyPopularAdapter
 import com.dean.apihomemarketplace.adapter.StaggeredPopularAdapter
 import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
 import com.dean.apihomemarketplace.fragment.HomeFragment
+import com.dean.apihomemarketplace.listActivity.JakartaActivity
+import com.dean.apihomemarketplace.listActivity.TanggerangActivity
+import com.dean.apihomemarketplace.model.DataItem
 import com.dean.apihomemarketplace.model.ResponseHome
+import com.dean.apihomemarketplace.model.Tanggerang
 import com.dean.apihomemarketplace.utils.ApiService
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_see_all_popular.*
 import kotlinx.android.synthetic.main.activity_see_all_terkini.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.item_staggered_list.*
+import kotlinx.android.synthetic.main.item_staggered_row.*
 import org.jetbrains.anko.internals.AnkoInternals.getContext
+import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SeeAllPopularActivity : AppCompatActivity() {
+class SeeAllPopularActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var staggeredPopularAdapter: StaggeredPopularAdapter
+    private lateinit var searchView: EditText
+
 //    val context : Context? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_all_popular)
         supportActionBar?.hide()
+
+        tv_jakarta_popular.setOnClickListener {
+            val intent = Intent(this, JakartaActivity::class.java)
+            startActivity(intent)
+        }
+
+        tv_tanggerang_popular.setOnClickListener {
+            val intent = Intent(this, TanggerangActivity::class.java)
+            startActivity(intent)
+        }
 
 //        showRecyclerGrid()
 //        getHome()
@@ -51,6 +77,37 @@ class SeeAllPopularActivity : AppCompatActivity() {
             adapter = staggeredPopularAdapter
         }
 
+        searchView = findViewById(R.id.searchView)
+        searchView.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
+
+//        searchView.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View) {
+//                startActivity(Intent(getActivity(), SearchActivity::class.java))
+//            }
+//        })
+
+        searchView.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
+
+    }
+
+    private fun filter(text: String) {
+
+        val filterDataItem: ArrayList<DataItem> = ArrayList()
+        val dataItem: ArrayList<DataItem> = ArrayList()
+
+        for (eachData in dataItem) {
+            if (eachData.name!!.toLowerCase().contains(text.toLowerCase()) ||
+                    eachData.address!!.toLowerCase().contains(text.toLowerCase())) {
+                filterDataItem.add(eachData)
+            }
+        }
+
+        staggeredPopularAdapter.setData(filterDataItem)
+
     }
 
 //    private fun getRecyclerList() {
@@ -63,8 +120,7 @@ class SeeAllPopularActivity : AppCompatActivity() {
 
     private fun getBack() {
         iv_backstage_popular.setOnClickListener {
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
     }
 
@@ -154,6 +210,24 @@ class SeeAllPopularActivity : AppCompatActivity() {
         return super.getActionBar()
 
     }
+
+    override fun onClick(p0: View?) {
+        //ini searchview yang pake edit text
+        searchView.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                TODO("Not yet implemented")
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                filter(p0.toString())
+            }
+
+        })
+    }
 //
 //    private fun showRecyclerList() {
 ////        propertyPopularAdapter = PropertyPopularAdapter(this@SeeAllPopularActivity.listHome)
@@ -163,6 +237,7 @@ class SeeAllPopularActivity : AppCompatActivity() {
 //    private fun showRecyclerGrid() {
 //        TODO("Not yet implemented")
 //    }
+
 
 
 }

@@ -14,11 +14,11 @@
 
         <ImageView
             android:id="@+id/iv_backstage_terkini"
-            android:layout_width="@dimen/_35dp"
-            android:layout_height="@dimen/_40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_8dp"
             android:layout_marginEnd="@dimen/_16dp"
             android:src="@drawable/ic_rightarrow" />
 
@@ -26,22 +26,22 @@
             android:id="@+id/tv_title_terkini"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20dp"
-            android:layout_marginStart="@dimen/_55dp"
+            android:layout_marginTop="@dimen/_18dp"
+            android:layout_marginStart="@dimen/_85dp"
             android:padding="@dimen/_5dp"
             android:text="@string/terkini"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/_22sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/iv_favorite_terkini"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="@dimen/_45dp"
-            android:layout_marginStart="@dimen/_75dp"
-            android:layout_marginTop="@dimen/_24dp"
-            android:padding="@dimen/_5dp"
-            android:src="@drawable/ic_favorite_24" />
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_favorite_terkini"-->
+<!--            android:layout_width="@dimen/_40dp"-->
+<!--            android:layout_height="@dimen/_45dp"-->
+<!--            android:layout_marginStart="@dimen/_75dp"-->
+<!--            android:layout_marginTop="@dimen/_24dp"-->
+<!--            android:padding="@dimen/_5dp"-->
+<!--            android:src="@drawable/ic_favorite_24" />-->
 
     </LinearLayout>
 
@@ -66,8 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Jakarta"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -78,8 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bandung"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -89,8 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bekasi"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -100,8 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Surabaya"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -111,8 +111,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Bogor"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -122,8 +122,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Tanggerang"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -133,8 +133,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Magelang"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -144,8 +144,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16dp"
-                android:background="@android:color/darker_gray"
-                android:padding="@dimen/_4dp"
+                android:background="@drawable/bg_btn"
+                android:padding="@dimen/_8dp"
                 android:text="Jayapura"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_16sp" />
@@ -161,7 +161,6 @@
         android:layout_below="@id/hs_category"
         android:layout_margin="@dimen/_8dp"
         android:layout_marginTop="@dimen/_20dp"
-        android:padding="@dimen/_8dp" />
-
+        android:padding="@dimen/_8dp"/>
 
 </RelativeLayout>

@@ -4,14 +4,10 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.fragment.HomeFragment
 import com.dean.apihomemarketplace.fragment.ProfileFragment
-import com.dean.apihomemarketplace.fragment.SewaFragment
+import com.dean.apihomemarketplace.fragment.FavoriteFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,9 +19,9 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
 
-            R.id.navigation_sewa -> {
-                val sewaFragment = SewaFragment()
-                addFragment (sewaFragment)
+            R.id.navigation_favorite -> {
+                val favoriteFragment = FavoriteFragment()
+                addFragment (favoriteFragment)
                 return@OnNavigationItemSelectedListener true
             }
 
@@ -54,4 +50,5 @@ class MainActivity : AppCompatActivity() {
         nav_main.setOnNavigationItemSelectedListener  (onNavigationItemSelectedListener)
         addFragment(defaultMainView)
     }
+
 }

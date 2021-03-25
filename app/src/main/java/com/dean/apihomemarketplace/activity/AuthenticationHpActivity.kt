@@ -29,7 +29,27 @@ class AuthenticationHpActivity : AppCompatActivity() {
             }
 
             else toast("tidak boleh kosong")
+
         }
+
+
 
     }
 }
+
+
+
+//val key = intent.getStringExtra(Constan.key)
+//val database = FirebaseDatabase.getInstance()
+//val myRef = database.getReference(Constan.tb_user)
+//
+////update realtime database
+//tv_submit_number.onClick {
+//    if (et_auth_hp.text.toString().isNotEmpty()){
+//        myRef.child(key!!).child("phone")
+//                .setValue(et_auth_hp.text.toString())
+//        startActivity<MainActivity>()
+//    }
+//
+//    else toast("tidak boleh kosong")
+//}

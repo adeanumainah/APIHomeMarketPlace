@@ -13,6 +13,7 @@ import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.activity.DetailActivity
 import com.dean.apihomemarketplace.model.DataItem
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.item_staggered_list.view.*
 import kotlinx.android.synthetic.main.item_staggered_row.view.*
 
 class StaggeredTerkiniAdapter(var context: Context)
@@ -29,11 +30,23 @@ class StaggeredTerkiniAdapter(var context: Context)
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(data: DataItem) {
             with(itemView) {
+//                Glide.with(itemView)
+//                    .load(data.image)
+//                    //di requestoption bisa ngatur opacity nya jg
+//                    .apply(RequestOptions().override(400))
+//                    .into(iv_staggered_rumah)
+
+                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+data?.image
+
+//            val url:String = "http://192.168.80.139/apihouse/public/image/"
+
+                Log.d("Cek DataDi Detail",urlImg)
+//            Glide.with(this).load(urlImg).into(iv_image_detail)
                 Glide.with(itemView)
-                    .load(data.image)
-                    //di requestoption bisa ngatur opacity nya jg
-                    .apply(RequestOptions().override(400))
-                    .into(iv_staggered_rumah)
+                        .load(urlImg)
+                        .placeholder(R.drawable.houseicon)
+                        .centerCrop()
+                        .into(iv_staggered_rumah)
 
                 tv_staggered_name.text = data.name
                 tv_staggered_address.text = data.address
