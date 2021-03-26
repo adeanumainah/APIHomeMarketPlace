@@ -72,14 +72,14 @@
 
 
     <string-array name="name_jkt">
-        <item>Serenia Hills</item>
-        <item>Pinang Residences, Elegant Smart Home</item>
-        <item>South Grove, A Beautiful Life</item>
-    </string-array>
-    <string-array name="address_jkt">
         <item>Jl.Karang Tengah No.9, Lebak Bulus, Jakarta Selatan</item>
         <item>Jl.Deplu Raya No.16, Bintaro, Pesanggrahan, Jakarta Selatan</item>
         <item>JI.Lebak Bulus 1 No.66, Jakarta Selatan</item>
+    </string-array>
+    <string-array name="address_jkt">
+        <item>Serenia Hills</item>
+        <item>Pinang Residences, Elegant Smart Home</item>
+        <item>South Grove, A Beautiful Life</item>
     </string-array>
     <array name="img_jkt">
         <item>@drawable/serenia_hills</item>
@@ -88,17 +88,19 @@
     </array>
 
     <string-array name="name_tg">
-        <item>The Savia:Serene Living</item>
-        <item>Avania Bintaro</item>
-        <item>Baileys City</item>
-        <item>Perumahan Daru Raya Jambe Tangerang</item>
-    </string-array>
-    <string-array name="address_tg">
         <item>JI.Ambon, Ciater, Serpong Sub-District, BSD, Tangerang, Banten</item>
         <item>JI.Bhakti, Jombang, Ciputat, Tangerang Selatan, Banten</item>
         <item>JI.Dewi Sartika No. 31, Ciputat, Tangerang Selatan, Banten</item>
         <item>JI.Tipar Raya, Daru Kecamatan Jambe, Tangerang, Banten</item>
     </string-array>
+
+    <string-array name="address_tg">
+        <item>The Savia : Serene Living</item>
+        <item>Avania Bintaro</item>
+        <item>Baileys City</item>
+        <item>Perumahan Daru Raya Jambe Tangerang</item>
+    </string-array>
+
     <array name="img_tg">
         <item>@drawable/serenia_hills</item>
         <item>@drawable/house1</item>

@@ -20,6 +20,10 @@ class TanggerangActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tanggerang)
 
+        iv_backstage_tg.setOnClickListener {
+            onBackPressed()
+        }
+
         showRecyclerListTg()
     }
 

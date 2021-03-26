@@ -10,6 +10,7 @@ data class Jakarta(
     var addressJkt: String
 //        var img_local : Int
 
+
 ) : Parcelable
 
 

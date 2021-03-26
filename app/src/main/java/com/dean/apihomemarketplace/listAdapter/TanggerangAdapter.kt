@@ -1,6 +1,7 @@
 package com.dean.apihomemarketplace.listAdapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,11 +42,23 @@ class TanggerangAdapter(private val listener: (Tanggerang) -> Unit)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(tg: Tanggerang, listener: (Tanggerang) -> Unit) {
             with(itemView) {
-                Glide.with(itemView.context).load("http://192.168.88.236/apihouse/public/image/")
-                    .apply(RequestOptions().override(300)).into(img_list_staggered)
+//                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+jkt?.imgJkt
+//
+//
+//                Log.d("Cek DataDi Detail",urlImg)
+//                Glide.with(itemView)
+//                    .load(urlImg)
+//                    .placeholder(R.drawable.houseicon)
+//                    .centerCrop()
+//                    .into(img_list_staggered)
 
                 tv_name_stglist.setText(tg.nameTg)
                 tv_address_stglist.setText(tg.addressTg)
+
+
+//                Glide.with(itemView.context).load("http://192.168.88.236/apihouse/public/image/")
+//                    .apply(RequestOptions().override(300)).into(img_list_staggered)
+
 
 //                val page = Intent(context, DetailActivity::class.java)
 //                page.putExtra(DetailActivity.KEY_POPULAR_HOME, Gson().toJson(tg))

@@ -26,15 +26,15 @@
             android:id="@+id/tv_title_popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_18dp"
             android:layout_marginStart="@dimen/_70dp"
+            android:layout_marginTop="@dimen/_18dp"
             android:padding="@dimen/_5dp"
             android:text="@string/popular"
             android:textColor="@android:color/black"
             android:textSize="@dimen/_20sp"
             android:textStyle="bold" />
 
-<!--        <ImageView-->
+        <!--        <ImageView-->
 <!--            android:id="@+id/iv_favorite_popular"-->
 <!--            android:layout_width="@dimen/_40dp"-->
 <!--            android:layout_height="@dimen/_45dp"-->

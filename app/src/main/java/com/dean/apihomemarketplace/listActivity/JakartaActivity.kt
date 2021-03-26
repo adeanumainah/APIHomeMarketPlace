@@ -1,12 +1,10 @@
 package com.dean.apihomemarketplace.listActivity
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dean.apihomemarketplace.R
-import com.dean.apihomemarketplace.activity.DetailActivity
 import com.dean.apihomemarketplace.listAdapter.JakartaAdapter
 import com.dean.apihomemarketplace.model.Jakarta
 import kotlinx.android.synthetic.main.activity_jakarta.*
@@ -18,6 +16,10 @@ class JakartaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jakarta)
+
+        iv_backstage_jk.setOnClickListener {
+            onBackPressed()
+        }
 
         showRecyclerList()
     }
@@ -59,16 +61,22 @@ class JakartaActivity : AppCompatActivity() {
         return listJkt
 
     }
-//
+
+
 //    private fun Jakarta(
-//        id: String?,
-//        nameJkt: String?,
-//        addressJkt: String?
-//    ): Jakarta {
+//        id: String,
+//        nameJkt: String,
+//        addressJkt: String
+//    ): Boolean {
 //        TODO("Not yet implemented")
 //    }
+
+
 
 //    override fun onClick(p0: View?) {
 //        TODO("Not yet implemented")
 //    }
+
 }
+
+

@@ -9,7 +9,7 @@ interface ApiEndPoint {
     @GET("data")
     fun getData(): Call<ResponseHome>
 
-    @GET("search_data?search=" + Constan.API_KEY)
-    fun searchItem(@Query("query") data: String?): Call<ResponseHome?>?
+    @GET("search")
+    fun searchItem(@Query("search") data: String?): Call<ResponseHome?>?
 
 }

@@ -2,6 +2,7 @@ package com.dean.apihomemarketplace.activity
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.SearchView
@@ -14,6 +15,7 @@ import com.dean.apihomemarketplace.adapter.StaggeredPopularAdapter
 import com.dean.apihomemarketplace.model.DataItem
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -60,13 +62,15 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener{
             ) {
                 showLoading(false)
                 rv!!.visibility = View.VISIBLE
-                if ((if (response.body() != null) response.body()!!.getResults() else null) != null) {
+                Log.d("TES", Gson().toJson(response.body()))
+                if (response.body() != null) {
                     val responseMovie: ResponseHome? = response.body()
                     dataItem = responseMovie!!.getResults() as List<DataItem>
                     staggeredPopularAdapter = StaggeredPopularAdapter(
                         this@SearchActivity
                     )
                     rv!!.adapter = staggeredPopularAdapter
+                    staggeredPopularAdapter!!.setData(dataItem)
                 } else {
                     showLoading(false)
                 }
