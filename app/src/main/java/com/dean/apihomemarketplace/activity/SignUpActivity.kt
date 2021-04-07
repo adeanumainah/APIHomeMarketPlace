@@ -9,6 +9,7 @@ import com.dean.apihomemarketplace.utils.Constan
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_jawa.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
@@ -22,6 +23,10 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         auth = FirebaseAuth.getInstance()
+
+        tv_haveAccount.onClick {
+            startActivity<SignInActivity>()
+        }
 
         btn_register_sign_up.onClick {
             if (name_sign_up.text!!.isNotEmpty() &&
@@ -39,6 +44,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
     //proses authentication
@@ -57,7 +63,7 @@ class SignUpActivity : AppCompatActivity() {
                                         phone_sign_up.text.toString(),
                                         task.result?.user!!
                                 )){
-                            startActivity<SignInActivity>()
+                            startActivity<AuthenticationHpActivity>()
                         }
                     } else {
                         Toast.makeText(this, getString(R.string.text_error_message) + task.exception!!.message.toString(), Toast.LENGTH_LONG).show()

@@ -34,12 +34,9 @@ class ProyekTerkiniAdapter(var context: Context)
                 tv_name_rumah.text = data.name
                 tv_address_rumah.text = data.address
 
-                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+data?.image
-
-//            val url:String = "http://192.168.80.139/apihouse/public/image/"
+                val urlImg:String = "http://192.168.42.36/apihouse/public/image/"+data.image
 
                 Log.d("Cek DataDi Detail",urlImg)
-//            Glide.with(this).load(urlImg).into(iv_image_detail)
                 Glide.with(itemView)
                         .load(urlImg)
                         .placeholder(R.drawable.houseicon)

@@ -217,8 +217,7 @@ class HomeFragment : Fragment() {
         ApiService.endpoint.getData().enqueue(
                 object : Callback<ResponseHome> {
                     override fun onResponse(call: Call<ResponseHome>, response: Response<ResponseHome>) {
-                        Log.d("Response", "Success" + response.body()?.data)
-
+//                        Log.d("Response", "Success" + response.body()?.data)
 
 
                         loading.dismiss()

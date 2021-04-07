@@ -1,5 +1,6 @@
 package com.dean.apihomemarketplace.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dean.apihomemarketplace.R
@@ -20,21 +21,19 @@ class AuthenticationHpActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference(Constan.tb_user)
 
-        //update realtime database
         tv_submit_number.onClick {
-            if (et_auth_hp.text.toString().isNotEmpty()){
-                myRef.child(key!!).child("phone")
-                        .setValue(et_auth_hp.text.toString())
-                startActivity<MainActivity>()
-            }
 
-            else toast("tidak boleh kosong")
+            val intent = Intent(this@AuthenticationHpActivity, SignInActivity::class.java)
+            startActivity(intent)
+//            if (et_auth_hp.text.toString().isNotEmpty()){
+//                myRef.child(key!!).child("phone")
+//                        .setValue(et_auth_hp.text.toString())
+//                startActivity<MainActivity>()
+            }
 
         }
 
 
-
-    }
 }
 
 

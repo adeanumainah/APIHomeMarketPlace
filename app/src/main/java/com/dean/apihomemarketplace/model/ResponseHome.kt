@@ -1,34 +1,35 @@
 package com.dean.apihomemarketplace.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-class ResponseHome{
-        @SerializedName("status")
-        @Expose
-        var status: Int? = null
+class ResponseHome {
+    @SerializedName("status")
+    @Expose
+    var status: Int? = null
 
-        @SerializedName("data")
-        @Expose
-        var data: List<DataItem>? = null
+    @SerializedName("data")
+    @Expose
+    var data: List<DataItem>? = null
 
-        constructor(
-                status: Int?,
-                data: List<DataItem>?,
-        ) {
-                this.status = status
-                this.data = data
-        }
+    constructor(
+            status: Int?,
+            data: List<DataItem>?,
+    ) {
+        this.status = status
+        this.data = data
+    }
 
-        fun setResults(results: List<DataItem?>) {
-                data = data
-        }
+    fun setResults(results: List<DataItem?>) {
+        data = data
+    }
 
-        fun getResults(): List<DataItem?>? {
-                return data
-        }
+    fun getResults(): List<DataItem?>? {
+        return data
+    }
 }
-
 
 data class DataItem(
         @SerializedName("id")
@@ -96,9 +97,14 @@ data class DataItem(
         var deletedAt: String? = null,
 
 
+        )
 
 
+@Parcelize
+data class DetailModel(
+        val id: Int,
+        val name: String,
+        val address: String,
+        val image: String
 
-
-)
-
+) : Parcelable

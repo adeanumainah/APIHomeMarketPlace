@@ -1,6 +1,5 @@
 package com.dean.apihomemarketplace.activity
 
-//import com.dean.homemarketplace.model.ResponseItem
 import android.app.ActionBar
 import android.app.PendingIntent.getActivity
 import android.app.ProgressDialog
@@ -13,6 +12,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,8 +21,7 @@ import com.dean.apihomemarketplace.adapter.PropertyPopularAdapter
 import com.dean.apihomemarketplace.adapter.StaggeredPopularAdapter
 import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
 import com.dean.apihomemarketplace.fragment.HomeFragment
-import com.dean.apihomemarketplace.listActivity.JakartaActivity
-import com.dean.apihomemarketplace.listActivity.TanggerangActivity
+import com.dean.apihomemarketplace.listActivity.*
 import com.dean.apihomemarketplace.model.DataItem
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.model.Tanggerang
@@ -41,33 +40,49 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SeeAllPopularActivity : AppCompatActivity(), View.OnClickListener {
+class SeeAllPopularActivity : AppCompatActivity() {
 
     private lateinit var staggeredPopularAdapter: StaggeredPopularAdapter
     private lateinit var searchView: EditText
-
-//    val context : Context? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_all_popular)
         supportActionBar?.hide()
 
+        tv_bekasi_popular.setOnClickListener {
+            val intent = Intent(this, BekasiActivity::class.java)
+            startActivity(intent)
+        }
         tv_jakarta_popular.setOnClickListener {
             val intent = Intent(this, JakartaActivity::class.java)
             startActivity(intent)
         }
-
         tv_tanggerang_popular.setOnClickListener {
             val intent = Intent(this, TanggerangActivity::class.java)
             startActivity(intent)
         }
+        tv_bogor_popular.setOnClickListener {
+            val intent = Intent(this, BogorActivity::class.java)
+            startActivity(intent)
+        }
+        tv_depok_popular.setOnClickListener {
+            val intent = Intent(this, DepokActivity::class.java)
+            startActivity(intent)
+        }
+        tv_sumatera_popular.setOnClickListener {
+            val intent = Intent(this, SumatraActivity::class.java)
+            startActivity(intent)
+        }
+        tv_jawa_popular.setOnClickListener {
+            val intent = Intent(this, JawaActivity::class.java)
+            startActivity(intent)
+        }
+        tv_kalimantan_popular.setOnClickListener {
+            val intent = Intent(this, KalimantanActivity::class.java)
+            startActivity(intent)
+        }
 
-//        showRecyclerGrid()
-//        getHome()
-
-//        getRecyclerList()
         GetDatas()
         getBack()
 
@@ -77,46 +92,16 @@ class SeeAllPopularActivity : AppCompatActivity(), View.OnClickListener {
             adapter = staggeredPopularAdapter
         }
 
-        searchView = findViewById(R.id.searchView)
+        searchView = findViewById(R.id.search_popular)
         searchView.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
 
-//        searchView.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(view: View) {
-//                startActivity(Intent(getActivity(), SearchActivity::class.java))
-//            }
-//        })
 
-        searchView.setOnClickListener {
+        search_popular.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
 
-
     }
-
-    private fun filter(text: String) {
-
-        val filterDataItem: ArrayList<DataItem> = ArrayList()
-        val dataItem: ArrayList<DataItem> = ArrayList()
-
-        for (eachData in dataItem) {
-            if (eachData.name!!.toLowerCase().contains(text.toLowerCase()) ||
-                    eachData.address!!.toLowerCase().contains(text.toLowerCase())) {
-                filterDataItem.add(eachData)
-            }
-        }
-
-        staggeredPopularAdapter.setData(filterDataItem)
-
-    }
-
-//    private fun getRecyclerList() {
-//        popularAdapter = findViewById(R.id.rv_all_popular)
-//        popularAdapter = context?.let { PropertyPopularAdapter(it) }!!
-//        val linearLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-//        rv_all_popular.setLayoutManager(linearLayoutManager)
-//    }
-
 
     private fun getBack() {
         iv_backstage_popular.setOnClickListener {
@@ -124,48 +109,60 @@ class SeeAllPopularActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+
     private fun GetDatas() {
 
         var loading = ProgressDialog.show(this, "Request Data", "Loading..")
         ApiService.endpoint.getData().enqueue(
-            object : Callback<ResponseHome> {
-                override fun onResponse(
-                    call: Call<ResponseHome>,
-                    response: Response<ResponseHome>
-                ) {
+                object : Callback<ResponseHome> {
+                    override fun onResponse(
+                            call: Call<ResponseHome>,
+                            response: Response<ResponseHome>
+                    ) {
 //                        Log.d("Response", "Success" + response.body()?.data)
 
 
-                    loading.dismiss()
-                    Log.d("DATA", "hide loading")
-                    if (response.isSuccessful) {
-                        val data = response.body()
+                        loading.dismiss()
+                        Log.d("DATA", "hide loading")
+                        if (response.isSuccessful) {
+                            val data = response.body()
 
 
-                        Log.d("DATA", "success")
-                        if (data?.status == 200) {
-                            Log.d("DATA", "200")
-                            if (!data.data.isNullOrEmpty()) {
-                                Log.d("DATA", "ADA")
-                                Log.d("DATA", Gson().toJson(data.data))
-                                staggeredPopularAdapter.setData(data.data!!)
+                            Log.d("DATA", "success")
+                            if (data?.status == 200) {
+                                Log.d("DATA", "200")
+                                if (!data.data.isNullOrEmpty()) {
+                                    Log.d("DATA", "ADA")
+                                    Log.d("DATA", Gson().toJson(data.data))
+                                    staggeredPopularAdapter.setData(data.data!!)
+                                }
+
                             }
-
                         }
                     }
-                }
 
-                override fun onFailure(call: Call<ResponseHome>, t: Throwable) {
-                    Log.d("Response", "Failed : " + t.localizedMessage)
-                    loading.dismiss()
-                }
-            }
 
+                    override fun onFailure(call: Call<ResponseHome>, t: Throwable) {
+                        Log.d("Response", "Failed : " + t.localizedMessage)
+                        loading.dismiss()
+                    }
+
+
+
+
+                }
 
         )
 
+
     }
-//
+
+
+    
+
+
+
+
 //    private fun getListPopular(): ArrayList<Home> {
 //        AndroidNetworking.get(com.dean.homemarketplace.utils.APIUtils.API_URL)
 //                .setPriority(Priority.MEDIUM).build().getAsJSONArray(object :JSONArrayRequestListener{
@@ -205,39 +202,6 @@ class SeeAllPopularActivity : AppCompatActivity(), View.OnClickListener {
 //
 //        return listHome
 //    }
-
-    override fun getActionBar(): ActionBar? {
-        return super.getActionBar()
-
-    }
-
-    override fun onClick(p0: View?) {
-        //ini searchview yang pake edit text
-        searchView.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                filter(p0.toString())
-            }
-
-        })
-    }
-//
-//    private fun showRecyclerList() {
-////        propertyPopularAdapter = PropertyPopularAdapter(this@SeeAllPopularActivity.listHome)
-////        rv_see_all_popular!!.adapter = propertyPopularAdapter
-//    }
-//
-//    private fun showRecyclerGrid() {
-//        TODO("Not yet implemented")
-//    }
-
 
 
 }

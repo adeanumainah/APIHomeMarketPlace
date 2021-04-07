@@ -7,27 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".activity.SearchActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <LinearLayout
+        android:id="@+id/rv_top"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:orientation="horizontal"
         android:background="@color/colorPrimary">
 
+        <ImageView
+            android:id="@+id/iv_backstage_search"
+            android:layout_width="@dimen/_30dp"
+            android:layout_height="@dimen/_25dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:src="@drawable/ic_rightarrow" />
 
         <SearchView
             android:id="@+id/searchMovie"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="@dimen/_350dp"
+            android:layout_height="@dimen/_45dp"
             android:layout_margin="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_8dp"
             android:background="@drawable/bg_white"
             android:backgroundTint="@color/white">
 
-
         </SearchView>
 
+</LinearLayout>
 
-    </FrameLayout>
+
+
+
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -44,6 +57,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_50dp"
         style="?android:attr/progressBarStyle"/>
 
 </LinearLayout>

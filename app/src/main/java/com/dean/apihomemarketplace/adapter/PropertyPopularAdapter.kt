@@ -37,12 +37,9 @@ class PropertyPopularAdapter(var context: Context)
                 tv_address_rumah.text = data.address
 //                Glide.with(context).load(data.image).centerCrop().into(iv_row_rumah)
 
-                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+data?.image
-
-//            val url:String = "http://192.168.80.139/apihouse/public/image/"
+                val urlImg:String = "http://192.168.42.36/apihouse/public/image/"+data.image
 
                 Log.d("Cek DataDi Detail",urlImg)
-//            Glide.with(this).load(urlImg).into(iv_image_detail)
                 Glide.with(itemView)
                         .load(urlImg)
                         .placeholder(R.drawable.houseicon)
@@ -74,5 +71,6 @@ class PropertyPopularAdapter(var context: Context)
     }
 
     override fun getItemCount(): Int = listData.size
+
 
 }

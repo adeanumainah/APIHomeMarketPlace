@@ -46,11 +46,11 @@ class TanggerangAdapter(private val listener: (Tanggerang) -> Unit)
 //
 //
 //                Log.d("Cek DataDi Detail",urlImg)
-//                Glide.with(itemView)
-//                    .load(urlImg)
-//                    .placeholder(R.drawable.houseicon)
-//                    .centerCrop()
-//                    .into(img_list_staggered)
+                Glide.with(itemView)
+                    .load("http://192.168.88.236/apihouse/public/image/")
+                    .placeholder(R.drawable.house4)
+                    .centerCrop()
+                    .into(img_list_staggered)
 
                 tv_name_stglist.setText(tg.nameTg)
                 tv_address_stglist.setText(tg.addressTg)
@@ -58,11 +58,6 @@ class TanggerangAdapter(private val listener: (Tanggerang) -> Unit)
 
 //                Glide.with(itemView.context).load("http://192.168.88.236/apihouse/public/image/")
 //                    .apply(RequestOptions().override(300)).into(img_list_staggered)
-
-
-//                val page = Intent(context, DetailActivity::class.java)
-//                page.putExtra(DetailActivity.KEY_POPULAR_HOME, Gson().toJson(tg))
-//                context.startActivity(page)
 
                 itemView.setOnClickListener { listener(tg) }
             }

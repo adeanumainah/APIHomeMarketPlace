@@ -41,15 +41,15 @@ class JakartaAdapter(private val listener: (Jakarta) -> Unit)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(jkt: Jakarta, listener: (Jakarta) -> Unit) {
             with(itemView) {
-//                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"+jkt?.imgJkt
-//
+
+//                val urlImg:String = "http://192.168.88.236/apihouse/public/image/"
 //
 //                Log.d("Cek DataDi Detail",urlImg)
-//                Glide.with(itemView)
-//                    .load(urlImg)
-//                    .placeholder(R.drawable.houseicon)
-//                    .centerCrop()
-//                    .into(img_list_staggered)
+                Glide.with(itemView)
+                    .load("urlImg")
+                    .placeholder(R.drawable.house2)
+                    .centerCrop()
+                    .into(img_list_staggered)
 
                 tv_name_stglist.setText(jkt.nameJkt)
                 tv_address_stglist.setText(jkt.addressJkt)
@@ -67,4 +67,7 @@ class JakartaAdapter(private val listener: (Jakarta) -> Unit)
         }
 
     }
+
+
+
 }

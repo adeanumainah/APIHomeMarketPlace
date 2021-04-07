@@ -4,7 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="searchRumah">Search for House</string>
+    <string name="searchRumah">Click for Search</string>
     <string name="terkini">Proyek Terkini </string>
     <string name="see">Lihat Semua </string>
     <string name="popular">Properti Terpopular </string>
@@ -92,54 +92,148 @@
         <item>JI.Bhakti, Jombang, Ciputat, Tangerang Selatan, Banten</item>
         <item>JI.Dewi Sartika No. 31, Ciputat, Tangerang Selatan, Banten</item>
         <item>JI.Tipar Raya, Daru Kecamatan Jambe, Tangerang, Banten</item>
+        <item>JI.BSD Raya Barat, Pagedangan, Kec. Serpong, Tangerang, Banten</item>
+        <item>JI.Kp Leungsir, munjul, kec. Solear, Tangerang, Banten</item>
+        <item>JI.Alam Utama, RT. 002/RW. 003, Pakualam, Kec. Serpong Utara, Tangerang, Banten</item>
     </string-array>
-
     <string-array name="address_tg">
         <item>The Savia : Serene Living</item>
         <item>Avania Bintaro</item>
         <item>Baileys City</item>
         <item>Perumahan Daru Raya Jambe Tangerang</item>
+        <item>BSD City - Muse Alesha Pool Villa</item>
+        <item>Duta Harmoni</item>
+        <item>Sutera Winona</item>
     </string-array>
-
     <array name="img_tg">
         <item>@drawable/serenia_hills</item>
         <item>@drawable/house1</item>
         <item>@drawable/house2</item>
         <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
+
+    <string-array name="name_bgr">
+        <item>JI.Dewa, Ciangsana Kec. Gn Putri, Bogor, Jawa Barat</item>
+        <item>JI.Serpong - Parung, Cibinong, Kec Gn Sindur, Bogor, Jawa Barat</item>
+        <item>JI.Raya Parung Bogor No. 47. RT/RW 01/08. Kemang, Bogor,Jawa Barat</item>
+        <item>JI.Pabuaran 8, Pamoyanan, Bogor, Jawa Barat</item>
+        <item>JI.H. USA Parung, Putat Nutug, Ciseeng, Bogor, Jawa Barat</item>
+    </string-array>
+    <string-array name="address_bgr">
+        <item>Cendana Residence</item>
+        <item>Blossom Park Residence</item>
+        <item>Kemang Eminence</item>
+        <item>Dharmawangsa Hills</item>
+        <item>Panorama Bali Residence</item>
+    </string-array>
+    <array name="img_bgr">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
+
+    <string-array name="address_dpk">
+        <item>Deast Townhouse</item>
+        <item>Rumello Verde : Sawangan Baru</item>
+        <item>Kaze Residence</item>
+        <item>Aliva Priva Jardin</item>
+    </string-array>
+    <string-array name="name_dpk">
+        <item>Jalan Pedurenan No.65, Cisalak, Cimanggis, Depok, JawaBarat</item>
+        <item>Sawangan Baru, Depok, Jawa Barat</item>
+        <item>JI. Duren I Jl. Raya Sawangan Depok, Rangkapan Jaya Baru, Kec. Pancoran Mas, Depok, Jawa Barat</item>
+        <item>JI. Pahlawan, Cinangka, Sawangan, Depok, Jawa Barat</item>
+    </string-array>
+    <array name="img_dpk">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
     </array>
 
 
-    <!--    <array name="data_photo">-->
-    <!--        <item>@drawable/serenia_hills</item>-->
-    <!--        <item>@drawable/house1</item>-->
-    <!--        <item>@drawable/house2</item>-->
-    <!--        <item>@drawable/house3</item>-->
-    <!--        <item>@drawable/house4</item>-->
-    <!--        <item>@drawable/house5</item>-->
+    <string-array name="address_smtr">
+        <item>Nuvasa Bay</item>
+        <item>GRIYA DUTA MAS</item>
+        <item>Halton Place</item>
+        <item>Givency One : Come Home With Pride</item>
+        <item>Citraland Pekanbaru : Clean, Green n Modern</item>
+        <item>Bumi Shangrila Jaya</item>
+    </string-array>
+    <string-array name="name_smtr">
+        <item>JI. Hang Lekiu-Nongsa, Batam, Kepulauan Riau</item>
+        <item>JI. Sukarela-Batujajar KM.7, Palembang, Sumatera Selatan</item>
+        <item>Jl. Panglima Denai / Menteng VII, Medan, Sumatera Utara</item>
+        <item>JI. Soekarno Hatta, Pekanbaru Riau</item>
+        <item>JI. RE Martadinata Sekupang, Batam, Kepulauan Riau</item>
+    </string-array>
+    <array name="img_smtr">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
 
-    <!--        <item>@drawable/house6</item>-->
-    <!--        <item>@drawable/house7</item>-->
-    <!--        <item>@drawable/house8</item>-->
-    <!--        <item>@drawable/house9</item>-->
-    <!--        <item>@drawable/house10</item>-->
+    <string-array name="address_bks">
+        <item>Mustika Village Sukamulya</item>
+        <item>Tera Damai (Cluster Astama)</item>
+        <item>Puri Lembana Bandung</item>
+        <item>Grand Sharon Residence : Total Reflection of Harmonious Modern Living</item>
+    </string-array>
+    <string-array name="name_bks">
+        <item>Desa Sukamulya kec. Sukatani, Bekasi, Jawa Barat</item>
+        <item>Jalan Turi Kelurahan Sriamur, Kecamatan Tambun Utara, Bekasi,  Jawa Barat</item>
+        <item>JI. HM. Djoyomartono, Bandung, Jawa Barat</item>
+        <item>JI. Inspeksi Cidurian - Soekarno Hatta, Bandung, Jawa Barat</item>
+    </string-array>
+    <array name="img_bks">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
 
-    <!--        <item>@drawable/house11</item>-->
-    <!--        <item>@drawable/house12</item>-->
-    <!--        <item>@drawable/house13</item>-->
-    <!--        <item>@drawable/house14</item>-->
-    <!--        <item>@drawable/house15</item>-->
 
-    <!--        <item>@drawable/house16</item>-->
-    <!--        <item>@drawable/house17</item>-->
-    <!--        <item>@drawable/house18</item>-->
-    <!--        <item>@drawable/house19</item>-->
-    <!--        <item>@drawable/house20</item>-->
+    <string-array name="address_klm">
+        <item>CitraLand Celebes</item>
+        <item>GRIYA DUTA MAS</item>
+        <item>Citraland Banjarmasin</item>
+    </string-array>
+    <string-array name="name_klm">
+        <item>JI. Tun Abdul Razak ( Hertasning baru), Gowa, Sulawesi Selatan</item>
+        <item>JI. Sukarela-Batujajar KM.7, Palembang, Sumatera Selatan</item>
+        <item>JI.A.Yani km 7,8, Pemurus Dalam, Kab. Banjar, Banjarmasin, Kalimantan Selatan</item>
+    </string-array>
+    <array name="img_klm">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
 
-    <!--        <item>@drawable/house21</item>-->
-    <!--        <item>@drawable/house22</item>-->
-    <!--        <item>@drawable/house23</item>-->
-    <!--        <item>@drawable/house24</item>-->
-    <!--    </array>-->
+    <string-array name="address_jwa">
+        <item>Ndalem Puri Asri</item>
+        <item>The JIVANA Homes</item>
+        <item>LAVAYA Resort and Residence</item>
+        <item>Royal Pandaan : Hunian Ekslusif</item>
+    </string-array>
+    <string-array name="name_jwa">
+        <item>JI. Raya Banjaratma, Paku Laut Margasari, Tegal, Jawa Tengah</item>
+        <item>JI. Raya Tebel, Gedangan, Sidoarjo, Jawa Timur</item>
+        <item>JI Telaga Waja No.05, Lingkungan Terora, Kel. Benoa, Kuta Selatan, Tanjung Benoa, Badung, Bali</item>
+        <item>JI. Surabaya - Malang No. km 58, Pasuruan, Jawa Timur</item>
+    </string-array>
+    <array name="img_jwa">
+        <item>@drawable/house2</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+        <item>@drawable/house</item>
+    </array>
 
 
 </resources>

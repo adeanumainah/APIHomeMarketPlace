@@ -37,7 +37,7 @@
         android:layout_marginTop="@dimen/_70dp"
         android:layout_marginRight="@dimen/_30dp"
         android:layout_marginBottom="@dimen/_10dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_gradiasi"
         android:elevation="@dimen/_4dp"
         android:padding="@dimen/_20dp">
 
@@ -100,7 +100,7 @@
                 android:id="@+id/tv_registeredSosmed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_30dp"
                 android:gravity="center"
                 android:text="@string/login_with_your_social_media_account"
                 android:textColor="@android:color/white"
@@ -117,7 +117,7 @@
                     android:id="@+id/signin_with_google"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16dp" />
+                    android:layout_marginTop="@dimen/_10dp" />
 
             </LinearLayout>
 

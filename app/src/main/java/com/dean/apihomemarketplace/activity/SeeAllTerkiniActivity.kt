@@ -4,21 +4,23 @@ import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.dean.apihomemarketplace.R
 import com.dean.apihomemarketplace.adapter.StaggeredTerkiniAdapter
-import com.dean.apihomemarketplace.listActivity.JakartaActivity
-import com.dean.apihomemarketplace.listActivity.TanggerangActivity
+import com.dean.apihomemarketplace.listActivity.*
 import com.dean.apihomemarketplace.listAdapter.JakartaAdapter
 import com.dean.apihomemarketplace.model.Jakarta
 import com.dean.apihomemarketplace.model.ResponseHome
 import com.dean.apihomemarketplace.utils.ApiService
 //import com.dean.homemarketplace.model.ResponseItem
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_see_all_popular.*
 import kotlinx.android.synthetic.main.activity_see_all_terkini.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
@@ -28,19 +30,43 @@ import retrofit2.Response
 class SeeAllTerkiniActivity : AppCompatActivity() {
 
     private lateinit var staggeredTerkiniAdapter: StaggeredTerkiniAdapter
+    private lateinit var searchView: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_all_terkini)
         supportActionBar?.hide()
 
+        tv_category_bekasi.setOnClickListener {
+            val intent = Intent(this, BekasiActivity::class.java)
+            startActivity(intent)
+        }
         tv_category_jakarta.setOnClickListener {
             val intent = Intent(this, JakartaActivity::class.java)
             startActivity(intent)
         }
-
         tv_category_turkish_tanggerang.setOnClickListener {
             val intent = Intent(this, TanggerangActivity::class.java)
+            startActivity(intent)
+        }
+        tv_category_bogor.setOnClickListener {
+            val intent = Intent(this, BogorActivity::class.java)
+            startActivity(intent)
+        }
+        tv_category_depok.setOnClickListener {
+            val intent = Intent(this, DepokActivity::class.java)
+            startActivity(intent)
+        }
+        tv_category_sumatera.setOnClickListener {
+            val intent = Intent(this, SumatraActivity::class.java)
+            startActivity(intent)
+        }
+        tv_category_jawa.setOnClickListener {
+            val intent = Intent(this, JawaActivity::class.java)
+            startActivity(intent)
+        }
+        tv_category_kalimantan.setOnClickListener {
+            val intent = Intent(this, KalimantanActivity::class.java)
             startActivity(intent)
         }
 
@@ -49,7 +75,17 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
         getRecyclerList()
 //        getDetail()
 
+        searchView = findViewById(R.id.search_terkini)
+        searchView.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
+
+
+        search_terkini.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 
 
 
@@ -60,9 +96,7 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
 
             //ngeset data diadapter dan diset adapternya disini
             staggeredTerkiniAdapter = StaggeredTerkiniAdapter(this)
-
             rv_all_terkini.adapter = staggeredTerkiniAdapter
-
         }
 
     private fun getBack() {
@@ -212,5 +246,6 @@ class SeeAllTerkiniActivity : AppCompatActivity() {
 //        rv_see_all_terkini.layoutManager = layoutManagerStaggered
 //        rv_see_all_terkini.adapter = ProyekTerkiniAdapter(listHome)
 //    }
+
 
 }

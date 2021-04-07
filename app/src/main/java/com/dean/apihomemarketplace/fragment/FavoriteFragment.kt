@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dean.apihomemarketplace.R
+import com.dean.apihomemarketplace.adapter.ViewPagerAdapter
+import kotlinx.android.synthetic.main.fragment_favorite.*
 
 class FavoriteFragment : Fragment() {
 
@@ -14,8 +16,16 @@ class FavoriteFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_favorite, container, false)
+        return inflater.inflate(R.layout.fragment_favorite, container, false)
+    }
 
-        return root
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.title = "Favorite"
+        val adapter = ViewPagerAdapter(childFragmentManager).apply {
+            addFragment(FavoriteRumahFragment(), "Home")
+        }
+        viewPager.adapter = adapter
+        tabs.setupWithViewPager(viewPager)
     }
 }

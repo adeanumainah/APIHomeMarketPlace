@@ -14,7 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APIHomeMarketPlace"
         android:usesCleartextTraffic="true">
-        <activity android:name=".listActivity.TanggerangActivity"></activity>
+        <activity android:name=".activity.ListDetailActivity"></activity>
+        <activity android:name=".listActivity.JawaActivity" />
+        <activity android:name=".listActivity.KalimantanActivity" />
+        <activity android:name=".listActivity.BekasiActivity" />
+        <activity android:name=".listActivity.DepokActivity" />
+        <activity android:name=".listActivity.SumatraActivity" />
+        <activity android:name=".listActivity.BogorActivity" />
+        <activity android:name=".listActivity.TanggerangActivity" />
         <activity android:name=".listActivity.JakartaActivity" />
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".activity.AuthenticationHpActivity" />
