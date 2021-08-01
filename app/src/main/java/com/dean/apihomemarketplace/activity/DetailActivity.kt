@@ -57,7 +57,7 @@ class DetailActivity : AppCompatActivity() {
 
         var detail:DataItem = Gson().fromJson(data,DataItem::class.java)
         try {
-            val urlImg:String = "http://192.168.42.36/apihouse/public/image/"+detail.image
+            val urlImg:String = "http://192.168.50.76/apihouse/public/image/"+detail.image
 
             Log.d("Cek DataDi Detail",urlImg)
             Glide.with(this)

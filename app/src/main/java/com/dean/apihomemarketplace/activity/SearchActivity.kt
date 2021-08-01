@@ -112,6 +112,5 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         }
     }
 
-
-
 }
+

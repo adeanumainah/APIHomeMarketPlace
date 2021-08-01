@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit
 class ApiService(val dao: FavDao, val appExecutors: AppExecutors) {
 
     companion object {
-        val BASE_URL: String = "http://192.168.42.36:8080/api/"
+        val BASE_URL: String = "http://192.168.50.76:8080/api/"
         private var launchRepository: ApiService? = null
 //        val endpoint: ApiEndPoint? = null
 

@@ -251,6 +251,7 @@ class HomeFragment : Fragment() {
         )
     }
 
+
     private fun Intent.putExtra(keyPopularHome: String){
         val page = Intent(context, DetailActivity::class.java)
         page.putExtra(DetailActivity.KEY_POPULAR_HOME)

@@ -37,7 +37,7 @@ class PropertyPopularAdapter(var context: Context)
                 tv_address_rumah.text = data.address
 //                Glide.with(context).load(data.image).centerCrop().into(iv_row_rumah)
 
-                val urlImg:String = "http://192.168.42.36/apihouse/public/image/"+data.image
+                val urlImg:String = "http://192.168.50.76/apihouse/public/image/"+data.image
 
                 Log.d("Cek DataDi Detail",urlImg)
                 Glide.with(itemView)
